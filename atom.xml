@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>WANGJI&#39;s BLOG</title>
   
-  
+  <subtitle>王某的鱼塘</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangjiosw.github.io/"/>
-  <updated>2020-02-29T14:18:58.227Z</updated>
+  <updated>2020-02-29T14:37:46.847Z</updated>
   <id>https://wangjiosw.github.io/</id>
   
   <author>
-    <name>Wangji</name>
+    <name>wangji</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://wangjiosw.github.io/2020/02/29/torchtext-use/"/>
     <id>https://wangjiosw.github.io/2020/02/29/torchtext-use/</id>
     <published>2020-02-29T13:25:00.000Z</published>
-    <updated>2020-02-29T14:18:58.227Z</updated>
+    <updated>2020-02-29T14:37:46.847Z</updated>
     
     <summary type="html">
     
