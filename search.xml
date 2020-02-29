@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Mac OS VMware Fusion Centos6.5虚拟机网络设置</title>
+      <link href="/2020/02/29/vmware/"/>
+      <url>/2020/02/29/vmware/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-安装vmware虚拟机"><a href="#1-安装vmware虚拟机" class="headerlink" title="1. 安装vmware虚拟机"></a>1. 安装vmware虚拟机</h1><p>安装vmware虚拟机，并新建一个centos 64位的虚拟机</p><h1 id="2-设置虚拟机网络模式"><a href="#2-设置虚拟机网络模式" class="headerlink" title="2. 设置虚拟机网络模式"></a>2. 设置虚拟机网络模式</h1><p><img src="https://img-blog.csdnimg.cn/20200210222413551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt=""></p><h1 id="3-查看vmware的网关和掩码"><a href="#3-查看vmware的网关和掩码" class="headerlink" title="3. 查看vmware的网关和掩码"></a>3. 查看vmware的网关和掩码</h1><p>在Mac电脑的终端输入：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> /Library/Preferences/VMware\ Fusion/vmnet8/nat.conf</code></pre><p>输出结果如下：<br><img src="https://img-blog.csdnimg.cn/20200210222624261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt=""><br>这里的ip和netmask即为vmware虚拟机的网关和掩码</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># NAT gateway address</span>ip <span class="token operator">=</span> 172.16.143.2netmask <span class="token operator">=</span> 255.255.255.0</code></pre><p>ip和netmask后面配置centos虚拟机的网络时分别对于网关和掩码。</p><h1 id="4-配置centos虚拟机的网络"><a href="#4-配置centos虚拟机的网络" class="headerlink" title="4. 配置centos虚拟机的网络"></a>4. 配置centos虚拟机的网络</h1><p>在centos虚拟机的终端输入：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-eth0</code></pre><p>然后：</p><ul><li>删除UUID和MAC地址</li><li>ONBOOT=yes</li><li>BOOTPROTO=static</li><li>IPADDR=172.16.143.101</li><li>NETMASK=255.255.255.0</li><li>GATEWAY=172.16.143.2</li><li>DNS1=172.16.143.2</li></ul><p>保存并退出，然后在centos虚拟机的终端输入：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">service</span> network restart</code></pre><p>ping 一下百度看是否能ping通：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">ping</span> www.baidu.com</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vmware </tag>
+            
+            <tag> macos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Torchtext使用教程</title>
       <link href="/2020/02/29/torchtext-use/"/>
       <url>/2020/02/29/torchtext-use/</url>
