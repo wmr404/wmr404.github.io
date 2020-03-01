@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mac OS VMware Fusion Centos6.5虚拟机网络设置, WANGJI&#39;s BLOG">
+    <meta name="keywords" content="胶囊间的动态路由-论文解读, WANGJI&#39;s BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mac OS VMware Fusion Centos6.5虚拟机网络设置 | WANGJI&#39;s BLOG</title>
+    <title>胶囊间的动态路由-论文解读 | WANGJI&#39;s BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -241,12 +241,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/vmware/vmware.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/capsule/capsule.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mac OS VMware Fusion Centos6.5虚拟机网络设置</h1>
+                    <h1 class="description center-align post-title">胶囊间的动态路由-论文解读</h1>
                 </div>
             </div>
         </div>
@@ -363,12 +363,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vmware/">
-                                <span class="chip bg-color">vmware</span>
+                            <a href="/tags/cpasule/">
+                                <span class="chip bg-color">cpasule</span>
                             </a>
                         
-                            <a href="/tags/macos/">
-                                <span class="chip bg-color">macos</span>
+                            <a href="/tags/paper/">
+                                <span class="chip bg-color">paper</span>
                             </a>
                         
                     </div>
@@ -379,8 +379,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                大数据
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
                             </a>
                         
                     </div>
@@ -392,7 +392,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-29
+                    2020-03-01
                 </div>
                 
 
@@ -406,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    262
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    14 分
                 </div>
                 
 
@@ -429,31 +429,108 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-安装vmware虚拟机"><a href="#1-安装vmware虚拟机" class="headerlink" title="1. 安装vmware虚拟机"></a>1. 安装vmware虚拟机</h1><p>安装vmware虚拟机，并新建一个centos 64位的虚拟机</p>
-<h1 id="2-设置虚拟机网络模式"><a href="#2-设置虚拟机网络模式" class="headerlink" title="2. 设置虚拟机网络模式"></a>2. 设置虚拟机网络模式</h1><p><img src="https://img-blog.csdnimg.cn/20200210222413551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt=""></p>
-<h1 id="3-查看vmware的网关和掩码"><a href="#3-查看vmware的网关和掩码" class="headerlink" title="3. 查看vmware的网关和掩码"></a>3. 查看vmware的网关和掩码</h1><p>在Mac电脑的终端输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> /Library/Preferences/VMware\ Fusion/vmnet8/nat.conf</code></pre>
-<p>输出结果如下：<br><img src="https://img-blog.csdnimg.cn/20200210222624261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt=""><br>这里的ip和netmask即为vmware虚拟机的网关和掩码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># NAT gateway address</span>
-ip <span class="token operator">=</span> 172.16.143.2
-netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
-<p>ip和netmask后面配置centos虚拟机的网络时分别对于网关和掩码。</p>
-<h1 id="4-配置centos虚拟机的网络"><a href="#4-配置centos虚拟机的网络" class="headerlink" title="4. 配置centos虚拟机的网络"></a>4. 配置centos虚拟机的网络</h1><p>在centos虚拟机的终端输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-eth0</code></pre>
-<p>然后：</p>
-<ul>
-<li>删除UUID和MAC地址</li>
-<li>ONBOOT=yes</li>
-<li>BOOTPROTO=static</li>
-<li>IPADDR=172.16.143.101</li>
-<li>NETMASK=255.255.255.0</li>
-<li>GATEWAY=172.16.143.2</li>
-<li>DNS1=172.16.143.2</li>
+                <h1 id="1-Capsule介绍"><a href="#1-Capsule介绍" class="headerlink" title="1. Capsule介绍"></a>1. Capsule介绍</h1><blockquote>
+<p>Sabour, Sara, Nicholas Frosst, and Geoffrey E. Hinton. “Dynamic routing between capsules.” Advances in neural information processing systems. 2017.</p>
+</blockquote>
+<p>Capsule特色是“vector in vector out”，取代了以往的“scaler in scaler out”，也就是神经元的输入输出都变成了向量，从而算是对神经网络理论的一次革命。</p>
+<p>然而在目前的深度学习中，从来不缺乏“vector in vector out”的案例，因此显然这不能算是Capsule的革命。比如在NLP中，一个词向量序列的输入模型，这个词向量序列再经过RNN/CNN/Attention的编码，输出一个新序列，不也是“vector in vector out”吗？</p>
+<p>Capsule的革命在于：<strong>它提出了一种新的“vector in vector out”的传递方案，并且这种方案在很大程度上是可解释的。</strong></p>
+<p>深度学习（神经网络）为什么有效：神经网络通过层层叠加完成了对输入的层层抽象，这个过程某种程度上<strong>模拟了人的层次分类做法</strong>，从而完成对最终目标的输出，并且具有比较好的泛化能力。的确，神经网络应该是这样做的，然而它并不能告诉我们它确确实实是这样做的，这就是神经网络的难解释性，也就是很多人会将深度学习视为黑箱的原因之一。</p>
+<p>下面介绍Capsule是怎么突破这一点的。</p>
+<h1 id="2-CapsNet模型"><a href="#2-CapsNet模型" class="headerlink" title="2. CapsNet模型"></a>2. CapsNet模型</h1><p>CapsNet: 两个卷积层(Conv 1, PrimaryCaps)，一个全连接层(DigitCaps)</p>
+<p><img src="https://img-blog.csdnimg.cn/20190615192127397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="2-1-Conv1层"><a href="#2-1-Conv1层" class="headerlink" title="2.1 Conv1层"></a>2.1 Conv1层</h2><p>常规的卷积层,  起像素级局部特征检测作用</p>
+<p><img src="https://img-blog.csdnimg.cn/20190615192144318.png" alt="在这里插入图片描述"><br>$shape: [None,28,28,1] \rightarrow [None,20,20,256]$</p>
+<h2 id="2-2-PrimaryCaps层"><a href="#2-2-PrimaryCaps层" class="headerlink" title="2.2 PrimaryCaps层"></a>2.2 PrimaryCaps层</h2><p>生成最低级卷积8D<strong>胶囊</strong>层（无路由）</p>
+<p>胶囊：其实，<strong>只要把一个向量当作一个整体来看，它就是一个“胶囊”。可以这样理解：神经元就是标量，胶囊就是向量</strong>。Hinton的理解是：每一个胶囊表示一个属性，而胶囊的向量则表示这个属性的“标架”。也就是说，我们以前只是用一个标量表示有没有这个特征（比如有没有羽毛），现在我们用一个向量来表示，不仅仅表示有没有，还表示“有什么样的”（比如有什么颜色、什么纹理的羽毛），如果这样理解，就是说在对单个特征的表达上更丰富了。</p>
+<p>简单的讲，PrimaryCaps层要输出一些8D的向量，每个向量代表一些比较低级的特征，向量的各个位置的值代表该特征的属性</p>
+<p><strong>PrimaryCaps层: 计算过程具有多种理解方式，其中之一为，8个并行的常规卷积层的叠堆</strong></p>
+<h3 id="PrimaryCaps层的第一种理解方式"><a href="#PrimaryCaps层的第一种理解方式" class="headerlink" title="PrimaryCaps层的第一种理解方式"></a>PrimaryCaps层的第一种理解方式</h3><p>8个并行的常规卷积层:<br><img src="https://img-blog.csdnimg.cn/20190615192158370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>卷积操作2参数:<br><img src="https://img-blog.csdnimg.cn/20190615192208901.png" alt="在这里插入图片描述"><br>对Conv1层的输出进行8次卷积操作2所示的卷积操作：<br><img src="https://img-blog.csdnimg.cn/20190615192232750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>然后对8个并行常规卷积层叠堆（对每个卷积层的各个通道在第四个维度上进行合并）：</p>
+<p>8个[6,6,1,32]卷积层合并示意图如下:<br><img src="https://img-blog.csdnimg.cn/20190615192257910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>得到叠堆后的结果：[None,6,6,8,32]<br>然后展开为[None,6x6x32,8,1]=[None,1152,8,1]，这样我们就得到了1152个初始胶囊，每个胶囊是一个纬度为[8,1]的向量，并代表某一特征</p>
+<h3 id="PrimaryCaps层的第二种理解方式"><a href="#PrimaryCaps层的第二种理解方式" class="headerlink" title="PrimaryCaps层的第二种理解方式"></a>PrimaryCaps层的第二种理解方式</h3><ul>
+<li>32个通道之间的卷积核是独立的(9x9大小)</li>
+<li>8个并行卷积层之间的参数也是独立的</li>
 </ul>
-<p>保存并退出，然后在centos虚拟机的终端输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">service</span> network restart</code></pre>
-<p>ping 一下百度看是否能ping通：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ping</span> www.baidu.com</code></pre>
+<p>$Rightarrow$ 即共有8x32个大小为9x9的相互独立的卷积核，可看作8x32个通道的常规卷积和<br>则可以用下面的操作得到和第一种理解方式相同的结果<br><img src="https://img-blog.csdnimg.cn/2019061519232534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>输出：$[None,6,6,32*8] \overset{reshape}{\rightarrow} [None,1152,8,1])$</p>
+<p><strong>注意</strong>：虽然计算方式上与常规卷积层无差异，但意义上却已经大不相同！将达到8x1capsule的特征封装的效果</p>
+<p><strong>PrimaryCaps输出输出1152个8D的胶囊后，使用了一个Squash函数做非线性变换，那么，为什么要设计这个函数呢？这个函数的原理是啥</strong></p>
+<h2 id="2-3-Squash函数"><a href="#2-3-Squash函数" class="headerlink" title="2.3 Squash函数"></a>2.3 Squash函数</h2><h3 id="为什么要设计squash函数："><a href="#为什么要设计squash函数：" class="headerlink" title="为什么要设计squash函数："></a>为什么要设计squash函数：</h3><p>因为论文希望Capsule能有一个性质：<strong>胶囊的模长能够代表这个特征的概率，即特征的“显著程度”， 模长越大，这个特征越显著，而我们又希望有一个有界的指标来对这个“显著程度”进行衡量，所以就只能对这个模长进行压缩了</strong></p>
+<h3 id="squash函数的原理："><a href="#squash函数的原理：" class="headerlink" title="squash函数的原理："></a>squash函数的原理：</h3><p>$$squash(x) = \frac{||x||^2}{1+||x||^2} \frac{x}{||x||}$$</p>
+<ul>
+<li>$\frac{x}{||x||}$: 将x的模长变为1</li>
+<li>$\frac{||x||^2}{1+||x||^2}$:     起缩放x的模长的作用，x模长越大，$\frac{||x||^2}{1+||x||^2}$越趋近于1，||x||=0时，$\frac{||x||^2}{1+||x||^2}=0$</li>
+</ul>
+<p>则$y=squash(x)$的效果为：x的模长越大，y的模长越趋近于1</p>
+<p><strong>PrimaryCaps输出的1152个8D的胶囊经过squash函数后非线性变换后，都具有了胶囊的模长能够代表这个特征的概率的特性，这些新的胶囊接着作为DigitCaps层的输入。</strong></p>
+<h2 id="2-4-DigitCaps层"><a href="#2-4-DigitCaps层" class="headerlink" title="2.4 DigitCaps层"></a>2.4 DigitCaps层</h2><p>由于该层解释起来比较复杂，所以先从简单例子开始，慢慢推出该层的流程及原理。</p>
+<h3 id="capsule示意"><a href="#capsule示意" class="headerlink" title="capsule示意"></a>capsule示意</h3><p>capsule示意图:</p>
+<p><img src="https://img-blog.csdnimg.cn/20190615192340940.png" alt="在这里插入图片描述"><br>如上图所示，底层的胶囊和高层的胶囊构成一些连接关系那么，这些胶囊要怎么运算，才能体现出“层层抽象”、“层层分类”的特性呢？让我们先看其中一部分连接：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190615192354980.png" alt="在这里插入图片描述"><br>u,v都是胶囊，图上只展示了$u_1$的连接。这也就是说，目前已经有了$u_1$这个特征（假设是羽毛），那么我想知道它属于上层特征$v_1,v_2  ,v_3,v_4$（假设分别代表了鸡、鸭、鱼、狗）中的哪一个。分类问题我们显然已经是很熟悉了，不就是内积后softmax吗？于是单靠$u_1$这个特征，我们推导出它是属于鸡、鸭、鱼、狗的概率分别是:</p>
+<p>$$(p_{1|1},p_{2|1},p_{3|1},p_{4|1})=\frac{1}{Z_1} (e^{&lt;u_1,v_1&gt;},e^{&lt;u_1,v_2&gt;},e^{&lt;u_1,v_3&gt;},e^{&lt;u_1,v_4&gt;})$$</p>
+<p>我们期望$p_{1|1}，p_{2|1}$会明显大于$p_{3|1}，p_{4|1}$（鸡鸭有羽毛，鱼狗没羽毛）不过，单靠这个特征还不够，我们还需要综合各个特征，于是可以把上述操作对各个u_i都做一遍，继而得到<br>$$(p_{1|2},p_{2|2},p_{3|2},p_{4|2}), (p_{1|3},p_{2|3},p_{3|3},p_{4|3}), …$$</p>
+<p>问题是，现在得到这么多预测结果，究竟要选择哪个呢？而且又不是真的要做分类，我们要的是融合这些特征，构成更高级的特征。</p>
+<p>于是Hinton认为，既然$u_i$这个特征得到的概率分布是$(p_{1|i},p_{2|i},p_{3|i},p_{4|i})$那么我把这个特征切成四份，分别为$(p_{1|i}u_i,p_{2|i}u_i,p_{3|i}u_i,p_{4|i}u_i)$, 然后把这几个特征分别传给$v_1,v_2,v_3,v_4$，最后$v_1,v_2,v_3,v_4$其实就是底层传入的特征的累加</p>
+<p>$$v_j=squash(p_{j|i} u_i )=squash(\sum_{i} \frac{e^{&lt;u_i,v_j&gt;}}{Z_i} u_i)$$</p>
+<p>从上往下看，那么Capsule就是每个底层特征分别做分类，然后将分类结果整合。这时$v_j$应该尽量与所有$u_i$都比较靠近，靠近的度量是内积。因此，从下往上看的话，可以认为$v_j$实际上就是各个$u_i$的某个聚类中心，而Capsule的核心思想就是<strong>输出是输入的某种聚类结果。</strong></p>
+<h3 id="动态路由："><a href="#动态路由：" class="headerlink" title="动态路由："></a>动态路由：</h3><p>注意到式子$v_j=squash(\sum_{i} \frac{e^{&lt;u_i,v_j&gt;}}{Z_i} u_i)$，为了求$v_j$需要求softmax，可是为了求softmax又需要知道$v_j$，这不是个鸡生蛋、蛋生鸡的问题了吗？而“动态路由”正是为了解决这一问题而提出的，它能够根据自身的特性来更新（部分）参数，从而初步达到了Hinton的放弃梯度下降的目标</p>
+<p>下面通过几个例子来解释动态路由的过程：</p>
+<h3 id="例1"><a href="#例1" class="headerlink" title="例1:"></a>例1:</h3><p>让我们先回到普通的神经网络，大家知道，激活函数在神经网络中的地位是举足轻重的。当然，激活函数本身很简单，比如一个tanh激活的全连接层。</p>
+<p>可是，如果想用$x=y+cos⁡y$的反函数来激活呢？也就是说，得解出$y=f(x)$，然后再用它来做激活函数。<br>然而$x=y+cos⁡y$的反函数是一个超越函数，也就是不可能用初等函数有限地表示出来。<br>但我们可以通过迭代法求出y：<br>$$y_{n+1} = x - cos y_n$$</p>
+<p>选择$y_0=x$，代入上式迭代几次，基本上就可以得到比较准确的y了。假如迭代3次，那就是<br>$$y=x-cos⁡(x-cos⁡(x-cos⁡x))$$<br>可以发现这和动态路由的过程有点像</p>
+<h3 id="例2"><a href="#例2" class="headerlink" title="例2:"></a>例2:</h3><p>再来看一个例子，这个例子可能在NLP中有很多对应的情景，但图像领域其实也不少。考虑一个向量序列$(x_1,x_2,…,x_n)$，我现在要想办法将这n个向量整合成一个向量x（encoder），然后用这个向量来做分类：<br>$$x= \sum_{i=1}^n \lambda _i x_i$$<br>这里的λ_i相当于衡量了x与x_i的相似度。那么，在x出现之前，凭什么能够确定这个相似度呢？<br>解决这个问题的一个方案也是迭代。首先我们也可以定义一个基于softmax的相似度指标，然后让</p>
+<p>$$x= \sum_{i=1}^n \frac{e^{&lt;x,x_i&gt;}}{Z} x_i$$</p>
+<p>一开始，我们一无所知，所以只好取x为各个$x_i$的均值，然后代入右边就可以算出一个x，再把它代入右边，反复迭代就行，一般迭代有限次就可以收敛，于是就可以将这个迭代过程嵌入到神经网络中了。</p>
+<p>如果说例1跟动态路由只是神似，那么例2已经跟动态路由是神似＋形似了。</p>
+<p>通过例1，例2，已经可以很清晰的开始解释动态路由过程了<br>为了得到各个v_j，一开始先让它们全都等于u_i的均值，然后反复迭代就好。说白了，输出是输入的聚类结果，而聚类通常都需要迭代算法，这个迭代算法就称为“动态路由”。</p>
+<p>到此，就可以写出论文里的动态路由的算法了：</p>
+<hr>
+<p>动态路由算法<br>初始化$b_{ij}$=0<br>迭代r次：<br>&nbsp;&nbsp;&nbsp;&nbsp;$c_i \leftarrow softmax(b_i)$<br>&nbsp;&nbsp;&nbsp;&nbsp;$s_j \leftarrow \sum_i c_{ij} u_i$<br>&nbsp;&nbsp;&nbsp;&nbsp;$v_j \leftarrow squash(s_j)$<br>&nbsp;&nbsp;&nbsp;&nbsp;$b_{ij} \leftarrow b_{ij}  + &lt;u_i,v_j&gt;$<br>返回$v_j$</p>
+<hr>
+<p>这里的$c_{ij}$就是前文的$p_{j|i}$前面已经说了，$v_j$是作为输入$u_i$的某种聚类中心出现的，而从不同角度看输入，得到的聚类结果显然是不一样的。那么为了实现“多角度看特征”，于是可以在每个胶囊传入下一个胶囊之前，都要先乘上一个矩阵做变换，所以式$v_j=squash(\sum_{i} \frac{e^{&lt;u_i,v_j&gt;}}{Z_i} u_i)$实际上应该要变为</p>
+<p>$v_j=squash(\sum_{i} \frac{e^{&lt;u_i,v_j&gt;}}{Z_i} \hat{u} _{j|i})$</p>
+<p>$\hat{u}<em>{j|i} = W</em>{ji} u_i$</p>
+<p>这里的$W_{ji}$是待训练的矩阵，这里的乘法是矩阵乘法，也就是矩阵乘以向量。所以，Capsule变成了下图<br><img src="https://img-blog.csdnimg.cn/20190615192705864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这时候就可以得到完整动态路由了:</p>
+<hr>
+<p>动态路由算法<br>初始化$b_{ij}$=0<br>迭代r次：<br>&nbsp;&nbsp;&nbsp;&nbsp;$c_i \leftarrow softmax(b_i)$<br>&nbsp;&nbsp;&nbsp;&nbsp;$s_j \leftarrow \sum_i c_{ij} \hat{u}<em>{j|i}$<br>&nbsp;&nbsp;&nbsp;&nbsp;$v_j \leftarrow squash(s_j)$<br>&nbsp;&nbsp;&nbsp;&nbsp;$b</em>{ij} \leftarrow b_{ij}  + &lt;u_i,v_j&gt;$<br>返回$v_j$</p>
+<hr>
+<p>这样的Capsule层，显然相当于普通神经网络中的全连接层。 </p>
+<h3 id="DigitCaps层流程总结"><a href="#DigitCaps层流程总结" class="headerlink" title="DigitCaps层流程总结"></a>DigitCaps层流程总结</h3><ol>
+<li>将PrimaryCaps输入的1152个8D的胶囊从乘$W_{ji}$，以达到不同角度看输入的目的，得到[None,10,1152,16,1]</li>
+<li>对每个1152里面的16D的胶囊，通过动态路由算法聚类出一个$v_j$</li>
+<li>返回[None,10,16],即输出10个胶囊，分别对应数字0～9，胶囊的模长代表是该数字的概率，每个胶囊内部的值代表了该数字的某一属性</li>
+</ol>
+<h2 id="2-5-重构层"><a href="#2-5-重构层" class="headerlink" title="2.5 重构层"></a>2.5 重构层</h2><p>重构层就比较简单了，但是也有一些细节需要说明一下<br><img src="https://img-blog.csdnimg.cn/20190615192716874.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>网络很简单，就是三个全连接层，其中有个masked操作，具体原理如下：<br>因为DigitCaps输出[None,10,16]，即每个样本输出10个16D的胶囊，胶囊的模长代表图片是这个类别的概率，而每个16D的胶囊里面各个位置的值则代表了这个数字的一系列属性，重构是该胶囊已经包含了大部分的信息，假设要重构的是数字5，那么就把DigitCaps该位置的mask设置为1，其他位置为0，那么实际重构事，就只有这个胶囊的信息参与了运算。</p>
+<h2 id="2-6-损失函数Margin-loss-recon-loss"><a href="#2-6-损失函数Margin-loss-recon-loss" class="headerlink" title="2.6 损失函数Margin loss + recon loss"></a>2.6 损失函数Margin loss + recon loss</h2><h3 id="Margin-loss函数："><a href="#Margin-loss函数：" class="headerlink" title="Margin loss函数："></a>Margin loss函数：</h3><p>$$L_c = T_c max⁡(0,m^+ - ||v_c ||)^2+ \lambda (1-T_c )max⁡(0,||v_c||-m^- )^2$$</p>
+<ul>
+<li>$c$:类别</li>
+<li>$T_c$:指示函数（分类c存在为1，否则为0）</li>
+<li>$m^-$:$||v_c ||$上边界，避免假阴性，遗漏实际预测到存在的分类的情况</li>
+<li>$m^+$:$||v_c |)|$下边界，避免假阳性</li>
+<li>margin loss: $\sum_c L_c$ </li>
+</ul>
+<h3 id="重构误差："><a href="#重构误差：" class="headerlink" title="重构误差："></a>重构误差：</h3><ul>
+<li>作用： 正则化</li>
+<li>重构网络： MLP</li>
+<li>重构误差计算方式MSE</li>
+</ul>
+<h1 id="3-运行结果"><a href="#3-运行结果" class="headerlink" title="3. 运行结果"></a>3. 运行结果</h1><h2 id="3-1测试集分类结果"><a href="#3-1测试集分类结果" class="headerlink" title="3.1测试集分类结果"></a>3.1测试集分类结果</h2><video src="/medias/capsule.mp4" controls="controls" width="640" height="320" autoplay="autoplay">
+Your browser does not support the video tag.
+</video>
+
+
+<h3 id="论文分类结果"><a href="#论文分类结果" class="headerlink" title="论文分类结果:"></a>论文分类结果:</h3><p><img src="https://img-blog.csdnimg.cn/201906151927271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="复现"><a href="#复现" class="headerlink" title="复现"></a>复现</h3><p>（routing:3,Reconstruction:yes）结果在测试集的准确率平均可达99.24%以上，基本复现成功</p>
+<h2 id="3-2-单数字重构效果"><a href="#3-2-单数字重构效果" class="headerlink" title="3.2 单数字重构效果"></a>3.2 单数字重构效果</h2><h3 id="论文单数字重构效果"><a href="#论文单数字重构效果" class="headerlink" title="论文单数字重构效果:"></a>论文单数字重构效果:</h3><p><img src="https://img-blog.csdnimg.cn/20190615192737677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="复现单数字重构效果"><a href="#复现单数字重构效果" class="headerlink" title="复现单数字重构效果:"></a>复现单数字重构效果:</h3><p><img src="https://img-blog.csdnimg.cn/20190615192749601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-3-重叠数字重构效果"><a href="#3-3-重叠数字重构效果" class="headerlink" title="3.3 重叠数字重构效果"></a>3.3 重叠数字重构效果</h2><h3 id="论文重叠数字重构效果"><a href="#论文重叠数字重构效果" class="headerlink" title="论文重叠数字重构效果:"></a>论文重叠数字重构效果:</h3><p><img src="https://img-blog.csdnimg.cn/20190615192757872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="复现重叠数字重构效果"><a href="#复现重叠数字重构效果" class="headerlink" title="复现重叠数字重构效果:"></a>复现重叠数字重构效果:</h3><p>第一行为实际图片和标签，第二行为预测的图片和标签，第三四行是把第二行两个图片分开的结果<br><img src="https://img-blog.csdnimg.cn/20190615192814738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pXb3N3aW4=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="4-github源码地址"><a href="#4-github源码地址" class="headerlink" title="4. github源码地址"></a>4. github源码地址</h1><blockquote>
+<p><a href="https://github.com/wangjiosw/capsule-pytorch" target="_blank" rel="noopener">https://github.com/wangjiosw/capsule-pytorch</a></p>
+</blockquote>
+<h1 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5. 参考文章"></a>5. 参考文章</h1><p>[1] <a href="https://kexue.fm/archives/4819" target="_blank" rel="noopener">揭开迷雾，来一顿美味的Capsule盛宴</a></p>
+<p>[2] <a href="https://kexue.fm/archives/5112" target="_blank" rel="noopener">再来一顿贺岁宴：从K-Means到Capsule</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -497,7 +574,7 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wangjiosw.github.io/2020/02/29/vmware/">https://wangjiosw.github.io/2020/02/29/vmware/</a>
+                    <a href="https://wangjiosw.github.io/2020/03/01/capsule/">https://wangjiosw.github.io/2020/03/01/capsule/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -535,12 +612,12 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vmware/">
-                                    <span class="chip bg-color">vmware</span>
+                                <a href="/tags/cpasule/">
+                                    <span class="chip bg-color">cpasule</span>
                                 </a>
                             
-                                <a href="/tags/macos/">
-                                    <span class="chip bg-color">macos</span>
+                                <a href="/tags/paper/">
+                                    <span class="chip bg-color">paper</span>
                                 </a>
                             
                         </div>
@@ -586,7 +663,7 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
         repo: 'blogtalk',
         owner: 'wmr404',
         admin: "wmr404",
-        id: '2020-02-29T23-25-00',
+        id: '2020-03-01T13-25-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -607,9 +684,10 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/03/01/capsule/">
                     <div class="card-image">
@@ -626,9 +704,9 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -641,6 +719,7 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -663,18 +742,18 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/29/torchtext-use/">
+                <a href="/2020/02/29/vmware/">
                     <div class="card-image">
                         
-                        <img src="/images/torchtext_use/torchtext.png" class="responsive-img" alt="Torchtext使用教程">
+                        <img src="/images/vmware/vmware.jpeg" class="responsive-img" alt="Mac OS VMware Fusion Centos6.5虚拟机网络设置">
                         
-                        <span class="card-title">Torchtext使用教程</span>
+                        <span class="card-title">Mac OS VMware Fusion Centos6.5虚拟机网络设置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍如何使用torchtext建立语料库、如何使用torchtext将词转下标，下标转词，词转词向量、如何建立相应的迭代器
+                            大数据环境：Mac OS VMware Fusion Centos6.5虚拟机网络设置
                         
                     </div>
                     <div class="publish-info">
@@ -685,8 +764,8 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Deep-Learning/" class="post-category">
-                                    Deep Learning
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
                                 </a>
                             
                             
@@ -696,16 +775,12 @@ netmask <span class="token operator">=</span> 255.255.255.0</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/torchtext/">
-                        <span class="chip bg-color">torchtext</span>
+                    <a href="/tags/vmware/">
+                        <span class="chip bg-color">vmware</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/nlp/">
-                        <span class="chip bg-color">nlp</span>
+                    <a href="/tags/macos/">
+                        <span class="chip bg-color">macos</span>
                     </a>
                     
                 </div>

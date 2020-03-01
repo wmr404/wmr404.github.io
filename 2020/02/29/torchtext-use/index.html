@@ -371,6 +371,10 @@
                                 <span class="chip bg-color">python</span>
                             </a>
                         
+                            <a href="/tags/nlp/">
+                                <span class="chip bg-color">nlp</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -379,8 +383,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/NLP/" class="post-category">
-                                NLP
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                Deep Learning
                             </a>
                         
                     </div>
@@ -399,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-29
+                    2020-03-01
                 </div>
                 
 
@@ -697,8 +701,8 @@ best_val_acc <span class="token operator">=</span> <span class="token number">0<
         val_accs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>acc<span class="token punctuation">)</span>
 
     acc <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>val_accs<span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> acc <span class="token operator">></span> best_val_acc<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'val acc : %.4f > %.4f saving model'</span><span class="token operator">%</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span>best_val_acc<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> acc <span class="token operator">&gt;</span> best_val_acc<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'val acc : %.4f &gt; %.4f saving model'</span><span class="token operator">%</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span>best_val_acc<span class="token punctuation">)</span><span class="token punctuation">)</span>
         torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">.</span>state_dict<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'params.pkl'</span><span class="token punctuation">)</span>
         best_val_acc <span class="token operator">=</span> acc
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'val acc: %.4f'</span><span class="token operator">%</span><span class="token punctuation">(</span>acc<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
@@ -794,6 +798,10 @@ best_val_acc <span class="token operator">=</span> <span class="token number">0<
                             
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/nlp/">
+                                    <span class="chip bg-color">nlp</span>
                                 </a>
                             
                         </div>
@@ -1078,6 +1086,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
     <footer class="page-footer bg-color">
     
@@ -1091,7 +1106,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">6.5k</span>&nbsp;字
             
             
             
